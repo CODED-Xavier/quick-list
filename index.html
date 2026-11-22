@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quicklist - Compras da semana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="brand">
+        <svg class="brand-icon" width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect x="2" y="2" width="12" height="12" rx="3" fill="#CA3884"/>
+          <rect x="18" y="2" width="12" height="12" rx="3" fill="#CA3884" fill-opacity="0.45"/>
+          <rect x="2" y="18" width="12" height="12" rx="3" fill="#CA3884" fill-opacity="0.45"/>
+          <rect x="18" y="18" width="12" height="12" rx="3" fill="#CA3884"/>
+        </svg>
+        <span class="brand-name">quicklist</span>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="title-row">
+        <h1 class="page-title">Compras da semana</h1>
+        <span id="items-counter" class="items-counter">0 itens</span>
+      </div>
+
+      <form id="add-item-form" class="add-form" novalidate>
+        <input
+          type="text"
+          id="item-input"
+          class="item-input"
+          placeholder="Adicione um novo item"
+          autocomplete="off"
+          aria-label="Adicione um novo item"
+        >
+        <button type="submit" class="btn-add">Adicionar item</button>
+      </form>
+
+      <ul id="shopping-list" class="shopping-list" aria-live="polite"></ul>
+
+      <div id="empty-state" class="empty-state" hidden>
+        <p>Sua lista de compras está vazia.</p>
+      </div>
+    </main>
+  </div>
+
+  <div id="toast-alert" class="toast-alert" role="status" aria-live="assertive" hidden>
+    <div class="toast-left">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M10 6V10.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="10" cy="13.75" r="1" fill="currentColor"/>
+      </svg>
+      <span id="toast-message">O item foi removido da lista</span>
+    </div>
+    <div class="toast-actions">
+      <button type="button" id="toast-undo" class="toast-undo">Desfazer</button>
+      <button type="button" id="toast-close" class="toast-close" aria-label="Fechar alerta">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
